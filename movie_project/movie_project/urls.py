@@ -13,7 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
+    path('movie', include('movie.urls'))
 ]
+# 부모 urls.py, server로 movie 앱을 사용하겠다는 요청이 오면 movie로 보내주는 역할을 한다.
